@@ -79,3 +79,5 @@ export default class ChatWindow extends Component {
     )
   }
 }
+
+ChatWindow.displayName = "ChatWindow"
