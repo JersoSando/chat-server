@@ -12,13 +12,13 @@ module.exports = {
         res.status(200).send(messages)
     },
     update: (req, res) => {
-        console.log('my id is', req.params.id)
         const {text} = req.body
         const updateID = req.params.id
-        const messageIndex = messages.findIndex((e) => updateID === e.id)
-        // messages[messageIndex].text = text
+        const messageIndex = messages.findIndex((e) => updateID == e.id)
+        let messageCopy = messages[messageIndex]
+
         messages[messageIndex] = {
-            ...messages[messageIndex],
+            ...messageCopy,
             text: text
         }
         res.status(200).send(messages)
